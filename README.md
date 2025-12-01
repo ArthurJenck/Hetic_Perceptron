@@ -8,3 +8,4 @@
     - Calculer l'équation
     - Calculer l'erreur
     - Modifier la valeur des poids
+3. Calculer l'erreur finale

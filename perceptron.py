@@ -29,6 +29,20 @@ class Perceptron:
 
         return X, y
 
+    def train_test(self, X, y, test_size=0.2):
+        indices = np.random.permutation(len(X))
+        X_shuffled = X[indices]
+        y_shuffled = y[indices]
+
+        split_idx = int(len(X) * (1 - test_size))
+
+        X_train = X_shuffled[:split_idx]
+        y_train = y_shuffled[:split_idx]
+        X_test = X_shuffled[split_idx:]
+        y_test = y_shuffled[split_idx:]
+
+        return X_train, y_train, X_test, y_test 
+
     def scalar_product(self, a, b):
         return np.dot(a, b)
 

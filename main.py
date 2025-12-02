@@ -6,11 +6,12 @@ perceptron = Perceptron(n_iterations=n_iterations)
 
 X, y = perceptron.getData('iris.csv')
 
-perceptron.fit(X, y)
+X_train, y_train, X_test, y_test = perceptron.train_test(X, y, test_size=0.2)
 
-for i in range(10):
-    example = X[i]
-    prediction = perceptron.predict_class(example)
+perceptron.fit(X_train, y_train)
 
-accuracy = perceptron.score(X, y)
-print(f"Precision: {accuracy * 100:.2f}%")
+train_accuracy = perceptron.score(X_train, y_train)
+print(f"Précision : {train_accuracy * 100:.2f}%")
+
+test_accuracy = perceptron.score(X_test, y_test)
+print(f"Précision sur les données de test : {test_accuracy * 100:.2f}%")

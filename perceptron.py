@@ -29,7 +29,7 @@ class Perceptron:
 
         return X, y
 
-    def train_test(self, X, y, test_size=0.2):
+    def train_test_split(self, X, y, test_size=0.2):
         indices = np.random.permutation(len(X))
         X_shuffled = X[indices]
         y_shuffled = y[indices]

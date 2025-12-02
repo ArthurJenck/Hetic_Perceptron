@@ -6,7 +6,7 @@ perceptron = Perceptron(n_iterations=n_iterations)
 
 X, y = perceptron.getData('iris.csv')
 
-X_train, y_train, X_test, y_test = perceptron.train_test(X, y, test_size=0.2)
+X_train, y_train, X_test, y_test = perceptron.train_test_split(X, y, test_size=0.2)
 
 perceptron.fit(X_train, y_train)
 
